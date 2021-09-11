@@ -99,7 +99,7 @@ function App() {
 
   return (
     <div className={styles.app}>
-        <div style={{width:'100%',overflow: 'auto', height:'90vh',background:'#f0f0f0'}}>
+        <div style={{width:'100%',overflow: 'auto', maxHeight:'90vh',background:'#f0f0f0'}}>
           {/* <Scripts/> */}
           {content(activeKey)}
         </div>

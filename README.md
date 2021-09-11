@@ -10,7 +10,8 @@
 ![image](https://user-images.githubusercontent.com/18437170/132956880-df563f18-ade9-48dc-88bd-f771a64cab00.png)
 
 
-
+# 预览（chrome不行，https不让请求http接口 ， 用手机自带浏览器）
+- https://qinglong.vercel.app/
 
 # 尝试框架 
 vite2 + react17 + and-desgin@5

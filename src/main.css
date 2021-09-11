@@ -21,7 +21,7 @@ h1,h2,h3,p{
 
 /* 定义滚动条 */
 ::-webkit-scrollbar {
-  width: 5px; /* 纵向滚动条*/
+  width: 10px; /* 纵向滚动条*/
   height: 5px; /* 横向滚动条 */
   background-color: #fff;
 }
