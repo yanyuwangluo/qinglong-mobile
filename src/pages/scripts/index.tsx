@@ -2,7 +2,6 @@ import React,{useEffect, useState} from 'react'
 import { Result,Badge, Card, Dialog, TextArea, Button } from 'antd-mobile'
 import {getAction, putAction} from '../../utils/requests'
 import style from './index.module.less'
-
 export default class Fuck extends React.Component{
     state = {
         records:[],
@@ -32,6 +31,7 @@ export default class Fuck extends React.Component{
                 title:v.name,
                 content:  (
                     <TextArea
+                    style={{ '--font-size': '12px'}}
                     defaultValue={res.data.data}
                     autoSize={{ minRows: 3 }}
                         />
@@ -76,7 +76,7 @@ export default class Fuck extends React.Component{
             return status[text]
         }
 
-       return (<div style={{margin:'0px auto'}}>
+       return (<div style={{margin:'0px auto',width:'90%'}}>
             { this.state.records.map((v,index) => (
                 <div key={index} className={style.card}>
                         <Card onClick={()=>this.handleCardClick({id:v._id,name:v.name})} title={v.name} extra={<div style={{marginLeft:10}}> {status(v.isDisabled)}</div>}>
@@ -107,7 +107,9 @@ export default class Fuck extends React.Component{
                                   })
                                 }
                             }
-                        >运行</Button>
+                        >
+                            运行
+                        </Button>
                 </div>
             ))}
         </div>)

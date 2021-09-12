@@ -1,15 +1,52 @@
 import axios from "axios";
 import config from "../config";
 import {getSessionStorage,getLocationStorage} from "./function";
+import { Toast } from "antd-mobile";
+/*
+ axios拦截器
+*/
+axios.interceptors.request.use(config=> {  // axios请求拦截器
+    // 在发送请求之前做些什么 
+    Toast.show({
+        content: '请求中...',
+        duration: 0,
+        icon:'loading',
+        position: 'center',
+      })
+    return config; 
+},error=> { 
+    // 对请求错误做些什么 
+    Toast.clear() 
+    return Promise.reject(error); 
+}); 
 
-const default_timeout = 30000 // 超时30秒
+axios.interceptors.response.use(response=> { // axios响应拦截器 
+    // 对响应数据做点什么
+    Toast.clear()  
+    return response; 
+},error=> { // 对响应错误做点什么
+    Toast.clear()  
+    return Promise.reject(error); 
+});
+
+/*
+ 通用化配置
+*/
+ const default_timeout = 30000 // 超时30秒
 const host = getLocationStorage('host') //host
 const token = getLocationStorage('token') //token
 const props = {  //axios公共参数
     timeout:default_timeout,
 } 
 console.log(token);
- 
+
+/**
+ * get,post,put方法封装
+ * @param {*} url 
+ * @param {*} data 
+ * @param {*} headers 
+ * @returns 
+ */
 
 export function postAction(url, data, headers){
     return axios({

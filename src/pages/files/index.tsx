@@ -1,13 +1,23 @@
 import React,{useEffect, useState} from 'react'
-import { Result,Badge, Card, Dialog, TextArea, Divider, List } from 'antd-mobile'
-import {getAction} from '../../utils/requests'
+import { Result,Badge, Card, Dialog, TextArea, Divider, List, FloatingPanel, Button, Toast } from 'antd-mobile'
+import {getAction,putAction} from '../../utils/requests'
 import style from './index.module.less'
+// code editor
+import CodeMirror from '@uiw/react-codemirror';
+import { javascript } from '@codemirror/lang-javascript';
 
+
+const anchors = [100, window.innerHeight * 0.4, window.innerHeight * 0.8]
 export default class Fuck extends React.Component{
     state = {
         records:[],
         id:null,
+        // editor
+        editorValue:"//代码区域",
+        filename:''
     }
+
+    // EditorRef = React.createRef();
 
     componentDidMount(){
         getAction('/open/scripts/files',{
@@ -19,23 +29,45 @@ export default class Fuck extends React.Component{
             })
         })
     }
-
+    // 点击查看文件内容
     handleCardClick = title =>{
         console.log(title);
         getAction(`/open/scripts/${title}`,{
         }).then(res =>{
             console.log(res.data.data);
-            // 显示文件内容
-            Dialog.confirm({
-                title: title,
-                content:  (
-                    <TextArea
-                    style={{width:'100%'}}
-                    defaultValue={res.data.data}
-                    autoSize={{ minRows: 3 }}
-                        />
-                )
-              })
+            this.setState({
+                filename:title,
+                editorValue:res.data.data
+            })
+            // 悬浮窗显示文件内容
+            // Dialog.confirm({
+            //     title: title,
+            //     content:  (
+            //         <TextArea
+            //         style={{width:'100%'}}
+            //         defaultValue={res.data.data}
+            //         autoSize={{ minRows: 3 }}
+            //             />
+            //     )
+            //   })
+        })
+    }
+    // 点击保存文件
+    handleFileSaving = ()=>{
+        console.log('进来否？');
+        
+        const {filename, editorValue} = this.state
+        if(filename ===''){
+            Toast.show('狗球文件都没有选，保存锤子')
+            return
+        }
+        putAction('/open/scripts',{
+            filename:filename,
+            content:editorValue
+        }).then(res=>{
+            if(res.data.code ===200){
+                Toast.show('保存正常')
+            }
         })
     }
 
@@ -43,39 +75,58 @@ export default class Fuck extends React.Component{
 
 
     render(){
-
-        const status =  (text) =>  {
-            const status ={
-                0:      <Badge content="已启用"
-                                 style={{
-                                    //  marginLeft: 12,
-                                     backgroundColor: '#fff',
-                                     borderRadius: 2,
-                                     color: '#2ce654',
-                                     border: '1px solid #2ce654',
-                                 }}
-                />,
-                1:      <Badge content="已禁用"
-                                 style={{
-                                    //  marginLeft: 12,
-                                     backgroundColor: '#fff',
-                                     borderRadius: 2,
-                                     color: '#ec1010',
-                                     border: '1px solid #ec1010',
-                                 }}
-                />
-            }
-            return status[text]
-        }
-
        return (<div style={{margin:'0px auto'}}>
-            <List>
-            { this.state.records.map((v,index) => (
-                    <List.Item key={index} onClick={()=>this.handleCardClick(v.title)}>
-                        {v.title}
-                    </List.Item>  
-            ))}
-            </List>
+
+                <Button  color="primary" 
+                            onClick={ ()=>
+                                {
+                                Dialog.show({
+                                    title: '确认保存么？',
+                                    closeOnAction: true,
+                                    actions: [
+                                      [
+                                        {
+                                          key: 'cancel',
+                                          text: '取消',
+                                        },
+                                        {
+                                          key: 'confirm',
+                                          text: '确认',
+                                          bold: true,
+                                          danger: true,
+                                          onClick:this.handleFileSaving
+                                        },
+                                      ],
+                                    ],
+                                  })
+                                }
+                            }
+                        >
+                            保存
+                </Button>
+
+               <CodeMirror
+                    value={this.state.editorValue}
+                    minHeight={'600px'}
+                    extensions={[javascript({ jsx: true })]}
+                    onChange={(value, viewUpdate) => {
+                        this.state.editorValue = value // 不触发更新视图，不然卡死
+                        // console.log('value:', value);
+                        // this.setState({
+                        //     editorValue:value
+                        // })
+                    }}
+                />
+  
+                <FloatingPanel anchors={anchors}>
+                    <List>
+                    { this.state.records.map((v,index) => (
+                            <List.Item key={index} onClick={()=>this.handleCardClick(v.title)}>
+                                {v.title}
+                            </List.Item>  
+                    ))}
+                    </List>
+                </FloatingPanel>
         </div>)
     }
 }

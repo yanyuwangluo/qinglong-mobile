@@ -219,6 +219,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.14.5"
 
+"@babel/runtime@7.15.4":
+  version "7.15.4"
+  resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.15.4.tgz?cache=0&sync_timestamp=1630618914695&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.15.4.tgz#fd17d16bfdf878e6dd02d19753a39fa8a8d9c84a"
+  integrity sha1-/RfRa/34eObdAtGXU6OfqKjZyEo=
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.10.1", "@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
   version "7.15.3"
   resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.15.3.tgz#2e1c2880ca118e5b2f9988322bd8a7656a32502b"
@@ -258,10 +265,255 @@
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
 
+"@codemirror/autocomplete@^0.19.0":
+  version "0.19.3"
+  resolved "https://registry.nlark.com/@codemirror/autocomplete/download/@codemirror/autocomplete-0.19.3.tgz#0266ac29617277d2d8cc7dcfb600c1e50c332d35"
+  integrity sha1-AmasKWFyd9LYzH3PtgDB5QwzLTU=
+  dependencies:
+    "@codemirror/language" "^0.19.0"
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/text" "^0.19.2"
+    "@codemirror/tooltip" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+    "@lezer/common" "^0.15.0"
+
+"@codemirror/basic-setup@0.19.0":
+  version "0.19.0"
+  resolved "https://registry.nlark.com/@codemirror/basic-setup/download/@codemirror/basic-setup-0.19.0.tgz#dc84dd735c8a88dd38c9dcc80cbfefa31d7e8f20"
+  integrity sha1-3ITdc1yKiN04ydzIDL/vox1+jyA=
+  dependencies:
+    "@codemirror/autocomplete" "^0.19.0"
+    "@codemirror/closebrackets" "^0.19.0"
+    "@codemirror/commands" "^0.19.0"
+    "@codemirror/comment" "^0.19.0"
+    "@codemirror/fold" "^0.19.0"
+    "@codemirror/gutter" "^0.19.0"
+    "@codemirror/highlight" "^0.19.0"
+    "@codemirror/history" "^0.19.0"
+    "@codemirror/language" "^0.19.0"
+    "@codemirror/lint" "^0.19.0"
+    "@codemirror/matchbrackets" "^0.19.0"
+    "@codemirror/rectangular-selection" "^0.19.0"
+    "@codemirror/search" "^0.19.0"
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+
+"@codemirror/closebrackets@^0.19.0":
+  version "0.19.0"
+  resolved "https://registry.nlark.com/@codemirror/closebrackets/download/@codemirror/closebrackets-0.19.0.tgz#69fdcee85779d638a00a42becd9f53a33a26d77f"
+  integrity sha1-af3O6Fd51jigCkK+zZ9Tozom138=
+  dependencies:
+    "@codemirror/language" "^0.19.0"
+    "@codemirror/rangeset" "^0.19.0"
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/text" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+
+"@codemirror/commands@^0.19.0":
+  version "0.19.3"
+  resolved "https://registry.nlark.com/@codemirror/commands/download/@codemirror/commands-0.19.3.tgz#855a7ef9e0a93b3f25f7d0f65aa2ea0c3f7691af"
+  integrity sha1-hVp++eCpOz8l99D2WqLqDD92ka8=
+  dependencies:
+    "@codemirror/language" "^0.19.0"
+    "@codemirror/matchbrackets" "^0.19.0"
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/text" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+    "@lezer/common" "^0.15.0"
+
+"@codemirror/comment@^0.19.0":
+  version "0.19.0"
+  resolved "https://registry.nlark.com/@codemirror/comment/download/@codemirror/comment-0.19.0.tgz#4f23497924e9346898c2e0123011acc535a0bea6"
+  integrity sha1-TyNJeSTpNGiYwuASMBGsxTWgvqY=
+  dependencies:
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/text" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+
+"@codemirror/fold@^0.19.0":
+  version "0.19.0"
+  resolved "https://registry.nlark.com/@codemirror/fold/download/@codemirror/fold-0.19.0.tgz#cd57537870ff581ae57199a7658abe3f9908f2ed"
+  integrity sha1-zVdTeHD/WBrlcZmnZYq+P5kI8u0=
+  dependencies:
+    "@codemirror/gutter" "^0.19.0"
+    "@codemirror/language" "^0.19.0"
+    "@codemirror/rangeset" "^0.19.0"
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+
+"@codemirror/gutter@^0.19.0":
+  version "0.19.1"
+  resolved "https://registry.nlark.com/@codemirror/gutter/download/@codemirror/gutter-0.19.1.tgz#0efce7d55fe608e2e91b06d0d025ea2c6a5dac7b"
+  integrity sha1-Dvzn1V/mCOLpGwbQ0CXqLGpdrHs=
+  dependencies:
+    "@codemirror/rangeset" "^0.19.0"
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+
+"@codemirror/highlight@^0.19.0":
+  version "0.19.4"
+  resolved "https://registry.nlark.com/@codemirror/highlight/download/@codemirror/highlight-0.19.4.tgz#2a985f6723815be4ef7684ab76d2b1519fe01c91"
+  integrity sha1-KphfZyOBW+TvdoSrdtKxUZ/gHJE=
+  dependencies:
+    "@codemirror/language" "^0.19.0"
+    "@codemirror/rangeset" "^0.19.0"
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+    "@lezer/common" "^0.15.0"
+    style-mod "^4.0.0"
+
+"@codemirror/history@^0.19.0":
+  version "0.19.0"
+  resolved "https://registry.nlark.com/@codemirror/history/download/@codemirror/history-0.19.0.tgz#cc8095c927c9566f7b69fa404074edde4c54d39c"
+  integrity sha1-zICVySfJVm97afpAQHTt3kxU05w=
+  dependencies:
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+
+"@codemirror/lang-javascript@^0.19.1":
+  version "0.19.1"
+  resolved "https://registry.nlark.com/@codemirror/lang-javascript/download/@codemirror/lang-javascript-0.19.1.tgz#157a145a3413c9774573956555c111e353640113"
+  integrity sha1-FXoUWjQTyXdFc5VlVcER41NkARM=
+  dependencies:
+    "@codemirror/autocomplete" "^0.19.0"
+    "@codemirror/highlight" "^0.19.0"
+    "@codemirror/language" "^0.19.0"
+    "@codemirror/lint" "^0.19.0"
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+    "@lezer/javascript" "^0.15.0"
+
+"@codemirror/language@^0.19.0":
+  version "0.19.2"
+  resolved "https://registry.nlark.com/@codemirror/language/download/@codemirror/language-0.19.2.tgz?cache=0&sync_timestamp=1629386824384&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40codemirror%2Flanguage%2Fdownload%2F%40codemirror%2Flanguage-0.19.2.tgz#01d03d746abc82aa3a8aaf5dcdfeab4b918b35fe"
+  integrity sha1-AdA9dGq8gqo6iq9dzf6rS5GLNf4=
+  dependencies:
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/text" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+    "@lezer/common" "^0.15.0"
+    "@lezer/lr" "^0.15.0"
+
+"@codemirror/lint@^0.19.0":
+  version "0.19.0"
+  resolved "https://registry.nlark.com/@codemirror/lint/download/@codemirror/lint-0.19.0.tgz#689d900aa13094093b41e87bf8b97943d6e9c62a"
+  integrity sha1-aJ2QCqEwlAk7Qeh7+Ll5Q9bpxio=
+  dependencies:
+    "@codemirror/panel" "^0.19.0"
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/tooltip" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+    crelt "^1.0.5"
+
+"@codemirror/matchbrackets@^0.19.0":
+  version "0.19.1"
+  resolved "https://registry.nlark.com/@codemirror/matchbrackets/download/@codemirror/matchbrackets-0.19.1.tgz#86dc57bc167e239731eb886bccd3b4e837dafadf"
+  integrity sha1-htxXvBZ+I5cx64hrzNO06Dfa+t8=
+  dependencies:
+    "@codemirror/language" "^0.19.0"
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+    "@lezer/common" "^0.15.0"
+
+"@codemirror/panel@^0.19.0":
+  version "0.19.0"
+  resolved "https://registry.nlark.com/@codemirror/panel/download/@codemirror/panel-0.19.0.tgz#18c7a253a7a1ef686bece1ef13ec0e5eb6603265"
+  integrity sha1-GMeiU6eh72hr7OHvE+wOXrZgMmU=
+  dependencies:
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+
+"@codemirror/rangeset@^0.19.0":
+  version "0.19.1"
+  resolved "https://registry.nlark.com/@codemirror/rangeset/download/@codemirror/rangeset-0.19.1.tgz#03ab6f93fb60d9ba98f810b98ed9471cba1e3854"
+  integrity sha1-A6tvk/tg2bqY+BC5jtlHHLoeOFQ=
+  dependencies:
+    "@codemirror/state" "^0.19.0"
+
+"@codemirror/rectangular-selection@^0.19.0":
+  version "0.19.0"
+  resolved "https://registry.nlark.com/@codemirror/rectangular-selection/download/@codemirror/rectangular-selection-0.19.0.tgz#6ea8ea31f6a6db346cd3c5229bfdbbb2e77138e4"
+  integrity sha1-bqjqMfam2zRs08Uim/27sudxOOQ=
+  dependencies:
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/text" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+
+"@codemirror/search@^0.19.0":
+  version "0.19.1"
+  resolved "https://registry.nlark.com/@codemirror/search/download/@codemirror/search-0.19.1.tgz#0d53f9db9f8099d2de1e370efff61053f7d7833e"
+  integrity sha1-DVP525+AmdLeHjcO//YQU/fXgz4=
+  dependencies:
+    "@codemirror/panel" "^0.19.0"
+    "@codemirror/rangeset" "^0.19.0"
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/text" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+    crelt "^1.0.5"
+
+"@codemirror/state@0.19.1", "@codemirror/state@^0.19.0":
+  version "0.19.1"
+  resolved "https://registry.nlark.com/@codemirror/state/download/@codemirror/state-0.19.1.tgz?cache=0&sync_timestamp=1629386824808&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40codemirror%2Fstate%2Fdownload%2F%40codemirror%2Fstate-0.19.1.tgz#cf0ee90b4fb45c295f8bbe2d6196d890ec81d92a"
+  integrity sha1-zw7pC0+0XClfi74tYZbYkOyB2So=
+  dependencies:
+    "@codemirror/text" "^0.19.0"
+
+"@codemirror/text@^0.19.0", "@codemirror/text@^0.19.2":
+  version "0.19.3"
+  resolved "https://registry.nlark.com/@codemirror/text/download/@codemirror/text-0.19.3.tgz#c00d86c7bb28360aa8e94beff815586fbda8fd43"
+  integrity sha1-wA2Gx7soNgqo6Uvv+BVYb72o/UM=
+
+"@codemirror/theme-one-dark@0.19.0":
+  version "0.19.0"
+  resolved "https://registry.nlark.com/@codemirror/theme-one-dark/download/@codemirror/theme-one-dark-0.19.0.tgz#e039d7ee5de7ea6251f6cd53d1c12281a9b8e210"
+  integrity sha1-4DnX7l3n6mJR9s1T0cEigam44hA=
+  dependencies:
+    "@codemirror/highlight" "^0.19.0"
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+
+"@codemirror/tooltip@^0.19.0":
+  version "0.19.2"
+  resolved "https://registry.nlark.com/@codemirror/tooltip/download/@codemirror/tooltip-0.19.2.tgz?cache=0&sync_timestamp=1630449119809&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40codemirror%2Ftooltip%2Fdownload%2F%40codemirror%2Ftooltip-0.19.2.tgz#a8f6b703edb64748106e136ec1f099a981a3f1d4"
+  integrity sha1-qPa3A+22R0gQbhNuwfCZqYGj8dQ=
+  dependencies:
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/view" "^0.19.0"
+
+"@codemirror/view@0.19.6", "@codemirror/view@^0.19.0":
+  version "0.19.6"
+  resolved "https://registry.nlark.com/@codemirror/view/download/@codemirror/view-0.19.6.tgz#49a3ec61633009f7d32db0c8f1f0f093857e545a"
+  integrity sha1-SaPsYWMwCffTLbDI8fDwk4V+VFo=
+  dependencies:
+    "@codemirror/rangeset" "^0.19.0"
+    "@codemirror/state" "^0.19.0"
+    "@codemirror/text" "^0.19.0"
+    style-mod "^4.0.0"
+    w3c-keyname "^2.2.4"
+
 "@ctrl/tinycolor@^3.4.0":
   version "3.4.0"
   resolved "https://registry.nlark.com/@ctrl/tinycolor/download/@ctrl/tinycolor-3.4.0.tgz#c3c5ae543c897caa9c2a68630bed355be5f9990f"
   integrity sha1-w8WuVDyJfKqcKmhjC+01W+X5mQ8=
+
+"@lezer/common@^0.15.0":
+  version "0.15.5"
+  resolved "https://registry.nlark.com/@lezer/common/download/@lezer/common-0.15.5.tgz#29266bdd335b650e58efeb25c789b32e0dcdddfa"
+  integrity sha1-KSZr3TNbZQ5Y7+slx4mzLg3N3fo=
+
+"@lezer/javascript@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.nlark.com/@lezer/javascript/download/@lezer/javascript-0.15.0.tgz#0033be1ff814c0d448e992cc3e0285b8b296135e"
+  integrity sha1-ADO+H/gUwNRI6ZLMPgKFuLKWE14=
+  dependencies:
+    "@lezer/lr" "^0.15.0"
+
+"@lezer/lr@^0.15.0":
+  version "0.15.2"
+  resolved "https://registry.nlark.com/@lezer/lr/download/@lezer/lr-0.15.2.tgz?cache=0&sync_timestamp=1630427851492&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40lezer%2Flr%2Fdownload%2F%40lezer%2Flr-0.15.2.tgz#e03581a31bc0b44a0b804aeb9fece050853778c5"
+  integrity sha1-4DWBoxvAtEoLgErrn+zgUIU3eMU=
+  dependencies:
+    "@lezer/common" "^0.15.0"
 
 "@react-spring/animated@~9.2.0":
   version "9.2.4"
@@ -321,11 +573,6 @@
   resolved "https://registry.nlark.com/@types/js-cookie/download/@types/js-cookie-2.2.7.tgz?cache=0&sync_timestamp=1629708510838&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fjs-cookie%2Fdownload%2F%40types%2Fjs-cookie-2.2.7.tgz#226a9e31680835a6188e887f3988e60c04d3f6a3"
   integrity sha1-ImqeMWgINaYYjoh/OYjmDATT9qM=
 
-"@types/node@^16.7.10":
-  version "16.7.10"
-  resolved "https://registry.nlark.com/@types/node/download/@types/node-16.7.10.tgz#7aa732cc47341c12a16b7d562f519c2383b6d4fc"
-  integrity sha1-eqcyzEc0HBKha31WL1GcI4O21Pw=
-
 "@types/prop-types@*":
   version "15.7.4"
   resolved "https://registry.nlark.com/@types/prop-types/download/@types/prop-types-15.7.4.tgz?cache=0&sync_timestamp=1629708829833&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fprop-types%2Fdownload%2F%40types%2Fprop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"
@@ -351,6 +598,17 @@
   version "0.16.2"
   resolved "https://registry.nlark.com/@types/scheduler/download/@types/scheduler-0.16.2.tgz?cache=0&sync_timestamp=1629709335583&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fscheduler%2Fdownload%2F%40types%2Fscheduler-0.16.2.tgz#1a62f89525723dde24ba1b01b092bf5df8ad4d39"
   integrity sha1-GmL4lSVyPd4kuhsBsJK/XfitTTk=
+
+"@uiw/react-codemirror@^4.0.0-rc.11":
+  version "4.0.0-rc.11"
+  resolved "https://registry.nlark.com/@uiw/react-codemirror/download/@uiw/react-codemirror-4.0.0-rc.11.tgz#19196012f8404e7f0710a5551f462d3f82d38d51"
+  integrity sha1-GRlgEvhATn8HEKVVH0YtP4LTjVE=
+  dependencies:
+    "@babel/runtime" "7.15.4"
+    "@codemirror/basic-setup" "0.19.0"
+    "@codemirror/state" "0.19.1"
+    "@codemirror/theme-one-dark" "0.19.0"
+    "@codemirror/view" "0.19.6"
 
 "@vitejs/plugin-react-refresh@^1.3.1":
   version "1.3.6"
@@ -508,6 +766,11 @@ copy-anything@^2.0.1:
   integrity sha1-hCQHugJGaw34RIGbvjuuu+XUXYc=
   dependencies:
     is-what "^3.12.0"
+
+crelt@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.npm.taobao.org/crelt/download/crelt-1.0.5.tgz#57c0d52af8c859e354bace1883eb2e1eb182bb94"
+  integrity sha1-V8DVKvjIWeNUus4Yg+suHrGCu5Q=
 
 csstype@^3.0.2:
   version "3.0.8"
@@ -1037,6 +1300,11 @@ source-map@~0.6.0:
   resolved "https://registry.nlark.com/source-map/download/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha1-dHIq8y6WFOnCh6jQu95IteLxomM=
 
+style-mod@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.nlark.com/style-mod/download/style-mod-4.0.0.tgz#97e7c2d68b592975f2ca7a63d0dd6fcacfe35a01"
+  integrity sha1-l+fC1otZKXXyynpj0N1vys/jWgE=
+
 supports-color@^5.3.0:
   version "5.5.0"
   resolved "https://registry.nlark.com/supports-color/download/supports-color-5.5.0.tgz?cache=0&sync_timestamp=1626703400240&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fsupports-color%2Fdownload%2Fsupports-color-5.5.0.tgz#e2e69a44ac8772f78a1ec0b35b689df6530efc8f"
@@ -1094,3 +1362,8 @@ vite@^2.5.2:
     rollup "^2.38.5"
   optionalDependencies:
     fsevents "~2.3.2"
+
+w3c-keyname@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.npm.taobao.org/w3c-keyname/download/w3c-keyname-2.2.4.tgz#4ade6916f6290224cdbd1db8ac49eab03d0eef6b"
+  integrity sha1-St5pFvYpAiTNvR24rEnqsD0O72s=

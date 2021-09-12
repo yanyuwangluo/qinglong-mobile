@@ -5,9 +5,11 @@
     "dev": "vite --host",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "push":"start .\\push.bat"
+    "push": "start .\\push.bat"
   },
   "dependencies": {
+    "@codemirror/lang-javascript": "^0.19.1",
+    "@uiw/react-codemirror": "^4.0.0-rc.11",
     "antd-mobile": "^5.0.0-beta.1",
     "axios": "^0.21.1",
     "react": "^17.0.0",
