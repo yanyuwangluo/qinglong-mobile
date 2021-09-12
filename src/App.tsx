@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import logo from './logo.svg'
+import Vconsole from 'vconsole'
 import styles from './App.module.less'
 import { Steps, Card, Button, Toast, TabBar} from 'antd-mobile'
 import { 
-  AntDesignOutlined, 
-  RightOutlined ,  
-  SettingOutlined, 
   HomeOutlined,
   MessageOutlined,
   UnorderedListOutlined,
@@ -47,8 +44,8 @@ function App() {
   const [activeKey, setActiveKey] = useState('scripts')
 
   // useEffect( ()=>{
-  //   alert('key change')
-  // },[activeKey] )
+  //   const vconsole = new Vconsole()
+  // },[] )
 
   // 渲染主要视图
   const content = (index:string)=>{
@@ -99,7 +96,7 @@ function App() {
 
   return (
     <div className={styles.app}>
-        <div style={{width:'100%',overflow: 'auto', maxHeight:'90vh',background:'#f0f0f0'}}>
+        <div style={{width:'100%',overflow: 'auto', maxHeight:'90vh',  background:'#f0f0f0'}}>
           {/* <Scripts/> */}
           {content(activeKey)}
         </div>

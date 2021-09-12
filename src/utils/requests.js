@@ -1,31 +1,28 @@
 import axios from "axios";
 import config from "../config";
 import {getSessionStorage,getLocationStorage} from "./function";
-import { Toast } from "antd-mobile";
+
+import { T } from 'react-toast-mobile';
+
 /*
  axios拦截器
 */
 axios.interceptors.request.use(config=> {  // axios请求拦截器
     // 在发送请求之前做些什么 
-    Toast.show({
-        content: '请求中...',
-        duration: 0,
-        icon:'loading',
-        position: 'center',
-      })
+    T.loading()
     return config; 
 },error=> { 
     // 对请求错误做些什么 
-    Toast.clear() 
+    T.loaded()
     return Promise.reject(error); 
 }); 
 
 axios.interceptors.response.use(response=> { // axios响应拦截器 
     // 对响应数据做点什么
-    Toast.clear()  
+    T.loaded()
     return response; 
 },error=> { // 对响应错误做点什么
-    Toast.clear()  
+    T.loaded()
     return Promise.reject(error); 
 });
 

@@ -39,31 +39,31 @@ export default ()=>{
   }
 
   return(
-    <div style={{width:'100%',height:'100%',margin:"0px auto",display:'flex',alignItems:'center',justifyContent:'center'}}>
-    <Form style={{width:'90%',height:'60%'}}
-    onFinish={onFinish}
-    footer={
-      <Button block type='submit' color='primary'>
-        提交
-      </Button>
-    }
-  >
-      <Form.Item
-        name='backend'
-        label='青龙后端'
-        rules={[{ required: true, message: '青龙后端不能为空' }]}
-      >
-        <Input placeholder='请输入青龙后端（ip:port）' />
-      </Form.Item>
+    <div style={{width:'100%',height:'100vh',margin:"0px auto",display:'flex',alignItems:'center',justifyContent:'center'}}>
+      <Form style={{width:'90%',height:'70%'}}
+      onFinish={onFinish}
+      footer={
+        <Button block type='submit' color='primary'>
+          提交
+        </Button>
+      }
+    >
+        <Form.Item
+          name='backend'
+          label='青龙后端'
+          rules={[{ required: true, message: '青龙后端不能为空' }]}
+        >
+          <Input placeholder='请输入青龙后端（ip:port）' />
+        </Form.Item>
 
-      <Form.Item name='id' label='CLIENT ID'>
-            <Input placeholder='请输入clientid' />
-      </Form.Item>
+        <Form.Item name='id' label='CLIENT ID'>
+              <Input placeholder='请输入clientid' />
+        </Form.Item>
 
-      <Form.Item name='secret' label='Client Secret'>
-            <Input placeholder='请输入Client Secret' />
-      </Form.Item>
-    </Form>
+        <Form.Item name='secret' label='Client Secret'>
+              <Input placeholder='请输入Client Secret' />
+        </Form.Item>
+      </Form>
     </div>
   )
 

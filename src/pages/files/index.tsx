@@ -14,7 +14,8 @@ export default class Fuck extends React.Component{
         id:null,
         // editor
         editorValue:"//代码区域",
-        filename:''
+        filename:'',
+        codeHeight:'auto'
     }
 
     // EditorRef = React.createRef();
@@ -105,9 +106,20 @@ export default class Fuck extends React.Component{
                             保存
                 </Button>
 
-               <CodeMirror
+                <Button  color="primary" 
+                        onClick={()=>{
+                            this.setState({
+                                codeHeight:this.state.codeHeight == 'auto'?'300px':'auto' 
+                            })
+                        }}
+                        >
+                            调整代码区域
+                </Button>
+
+                <CodeMirror
                     value={this.state.editorValue}
-                    minHeight={'600px'}
+                    height={this.state.codeHeight}
+                    style={{fontSize:'12px'}}
                     extensions={[javascript({ jsx: true })]}
                     onChange={(value, viewUpdate) => {
                         this.state.editorValue = value // 不触发更新视图，不然卡死
@@ -117,6 +129,7 @@ export default class Fuck extends React.Component{
                         // })
                     }}
                 />
+
   
                 <FloatingPanel anchors={anchors}>
                     <List>

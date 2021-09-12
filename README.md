@@ -24,7 +24,7 @@ vite2 + react17 + and-desgin@5
 # others
 - index.js :配置tarbar切换（不进行路由变换)
 - axios添加请求响应拦截器，全局配置请求加载动画：https://blog.csdn.net/qq_28500793/article/details/88784317
-
+- Toast提示： https://github.com/ray0324/react-toast-mobile
 
 # 手机端支持环境·
 - 安卓>5.0

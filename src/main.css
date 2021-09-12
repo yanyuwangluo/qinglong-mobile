@@ -1,4 +1,4 @@
-/* body {
+body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,19 +10,20 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-} */
-h1,h2,h3,p{
-  font-size: 1em;
 }
 
+/* h1,h2,h3,p{
+  font-size: 1em;
+} */
+/* antd5弹窗内容宽度 */
 .adm-dialog-body-message{
   width: 96%;
 }
 
 /* 定义滚动条 */
 ::-webkit-scrollbar {
-  width: 10px; /* 纵向滚动条*/
-  height: 5px; /* 横向滚动条 */
+  width: 1px; /* 纵向滚动条*/
+  height: 0px; /* 横向滚动条 */
   background-color: #fff;
 }
 
