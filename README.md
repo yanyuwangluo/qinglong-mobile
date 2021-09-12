@@ -7,7 +7,8 @@
 - 运行任务
 
 ![image](https://user-images.githubusercontent.com/18437170/132957393-3505f744-0fd9-447e-9b74-0ec538be1ae8.png)
-![image](https://user-images.githubusercontent.com/18437170/132956880-df563f18-ade9-48dc-88bd-f771a64cab00.png)
+![image](https://user-images.githubusercontent.com/18437170/132981332-62e55258-49f5-4bdf-99d9-d7125752d5fe.png)
+
 
 
 # 预览（chrome不行，https域名不让请求http接口 ， 用手机自带浏览器）
