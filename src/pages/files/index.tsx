@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import { Result,Badge, Card, Dialog, TextArea, Divider, List, FloatingPanel, Button } from 'antd-mobile'
 import {getAction,putAction} from '../../utils/requests'
-import {Toast} from '../../utils/utils'
+import {Toast,Alert} from '../../utils/utils'
 import style from './index.module.less'
 // code editor
 import CodeMirror from '@uiw/react-codemirror';
@@ -60,7 +60,7 @@ export default class Fuck extends React.Component{
         
         const {filename, editorValue} = this.state
         if(filename ===''){
-            Toast('狗球文件都没有选，保存锤子')
+            Alert('狗球文件都没有选，保存锤子')
             return
         }
         putAction('/open/scripts',{
@@ -68,7 +68,7 @@ export default class Fuck extends React.Component{
             content:editorValue
         }).then(res=>{
             if(res.data.code ===200){
-                Toast('保存正常')
+                Alert('保存正常')
             }
         })
     }
