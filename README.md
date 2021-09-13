@@ -2,9 +2,9 @@
 基于whyour/qinglong 的2.9.1 openapi做一个青龙手机版前端，当然是闲的蛋疼的时候再写
 
 # 功能
-- 登录存token
-- 查看定时任务及日志，变量， 脚本
-- 运行任务
+- 基于青龙2.9+的openapi， 登录并存token。
+- 查看定时任务及日志，变量， 脚本。
+- 运行任务,修改已有脚本。
 
 ![image](https://user-images.githubusercontent.com/18437170/132957393-3505f744-0fd9-447e-9b74-0ec538be1ae8.png)
 ![image](https://user-images.githubusercontent.com/18437170/132981332-62e55258-49f5-4bdf-99d9-d7125752d5fe.png)
