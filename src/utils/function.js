@@ -1,7 +1,6 @@
 /*
 工具类，包含常用工具
  */
-
 let $global = {
     storagePrefix :'ql'
 }

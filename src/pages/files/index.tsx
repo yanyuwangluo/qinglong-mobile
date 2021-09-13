@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
-import { Result,Badge, Card, Dialog, TextArea, Divider, List, FloatingPanel, Button, Toast } from 'antd-mobile'
+import { Result,Badge, Card, Dialog, TextArea, Divider, List, FloatingPanel, Button } from 'antd-mobile'
 import {getAction,putAction} from '../../utils/requests'
+import {Toast} from '../../utils/utils'
 import style from './index.module.less'
 // code editor
 import CodeMirror from '@uiw/react-codemirror';
@@ -15,7 +16,7 @@ export default class Fuck extends React.Component{
         // editor
         editorValue:"//代码区域",
         filename:'',
-        codeHeight:'auto'
+        codeHeight:'600px'
     }
 
     // EditorRef = React.createRef();
@@ -59,7 +60,7 @@ export default class Fuck extends React.Component{
         
         const {filename, editorValue} = this.state
         if(filename ===''){
-            Toast.show('狗球文件都没有选，保存锤子')
+            Toast('狗球文件都没有选，保存锤子')
             return
         }
         putAction('/open/scripts',{
@@ -67,7 +68,7 @@ export default class Fuck extends React.Component{
             content:editorValue
         }).then(res=>{
             if(res.data.code ===200){
-                Toast.show('保存正常')
+                Toast('保存正常')
             }
         })
     }
@@ -109,7 +110,7 @@ export default class Fuck extends React.Component{
                 <Button  color="primary" 
                         onClick={()=>{
                             this.setState({
-                                codeHeight:this.state.codeHeight == 'auto'?'300px':'auto' 
+                                codeHeight:this.state.codeHeight == '600px'?'300px':'600px' 
                             })
                         }}
                         >
@@ -119,7 +120,7 @@ export default class Fuck extends React.Component{
                 <CodeMirror
                     value={this.state.editorValue}
                     height={this.state.codeHeight}
-                    style={{fontSize:'12px'}}
+                    style={{fontSize:'13px'}}
                     extensions={[javascript({ jsx: true })]}
                     onChange={(value, viewUpdate) => {
                         this.state.editorValue = value // 不触发更新视图，不然卡死

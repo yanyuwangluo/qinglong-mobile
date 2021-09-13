@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Vconsole from 'vconsole'
 import styles from './App.module.less'
-import { Steps, Card, Button, Toast, TabBar} from 'antd-mobile'
+import { Steps, Card, Button, TabBar} from 'antd-mobile'
 import { 
   HomeOutlined,
   MessageOutlined,
@@ -10,6 +10,7 @@ import {
 
 import Mine from './pages/mine/mine' 
 import {getLocationStorage} from './utils/function'
+import {Toast} from './utils/utils'
 
 
 const { Step } = Steps
@@ -55,7 +56,8 @@ function App() {
     const Har = React.lazy(() => import('./pages/files/index'));
 
     if(!getLocationStorage('token')){
-      Toast.show('没登录就乖乖登录')
+      // Toast.show('没登录就乖乖登录')
+      Toast('没登录就乖乖登录')
       return (
         <React.Suspense fallback={<div>loading...</div>}>
               <Foo/>

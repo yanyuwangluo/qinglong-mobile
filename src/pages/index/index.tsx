@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styles from './index.module.less'
-import { Steps, Card, Button, Toast, TabBar} from 'antd-mobile'
+import { Steps, Card, Button, TabBar} from 'antd-mobile'
 import { 
   AntDesignOutlined, 
   RightOutlined ,   
@@ -35,7 +35,6 @@ export default function Home(props:any){
       <div className={styles.footer} onClick={e => e.stopPropagation()}>
         <Button
           color='primary'
-          onClick={() => Toast.show('点击了底部按钮')}
         >
           底部按钮
         </Button>

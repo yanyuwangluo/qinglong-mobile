@@ -22,7 +22,7 @@ code {
 
 /* 定义滚动条 */
 ::-webkit-scrollbar {
-  width: 1px; /* 纵向滚动条*/
+  width: 3px; /* 纵向滚动条*/
   height: 0px; /* 横向滚动条 */
   background-color: #fff;
 }
