@@ -1,16 +1,24 @@
 import React,{useEffect, useState} from 'react'
-import { Result,Badge, Card, Dialog, TextArea, Button } from 'antd-mobile'
+import { Result,Badge, Card, Dialog, TextArea, Button, Search } from 'antd-mobile'
 import {getAction, putAction} from '../../utils/requests'
 import style from './index.module.less'
 export default class Fuck extends React.Component{
     state = {
         records:[],
         id:null,
+
+        queryParams:{
+            searchValue:''
+        }
     }
 
     componentDidMount(){
+        this.LoadData()
+    }
+
+    LoadData = ()=>{
         getAction('/open/crons',{
-            searchValue:''
+            ...this.state.queryParams
         }).then(res =>{
             console.log(res.data.data);
             this.setState({
@@ -77,6 +85,9 @@ export default class Fuck extends React.Component{
         }
 
        return (<div style={{margin:'0px auto',width:'90%'}}>
+
+                <Search style={{'--background':'#ffffff'}} placeholder='请输入内容' showCancelButton onSearch={v=>this.setState({queryParams:{searchValue:v}},this.LoadData)} />
+
             { this.state.records.map((v,index) => (
                 <div key={index} className={style.card}>
                         <Card onClick={()=>this.handleCardClick({id:v._id,name:v.name})} title={v.name} extra={<div style={{marginLeft:10}}> {status(v.isDisabled)}</div>}>

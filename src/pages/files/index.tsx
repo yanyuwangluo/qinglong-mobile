@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import { Result,Badge, Card, Dialog, TextArea, Divider, List, FloatingPanel, Button } from 'antd-mobile'
+import { Result,Badge, Card, Dialog, TextArea, Divider, List, FloatingPanel, Button, Search } from 'antd-mobile'
 import {getAction,putAction} from '../../utils/requests'
 import {Toast,Alert} from '../../utils/utils'
 import style from './index.module.less'
@@ -16,18 +16,24 @@ export default class Fuck extends React.Component{
         // editor
         editorValue:"//代码区域",
         filename:'',
-        codeHeight:'600px'
+        codeHeight:'600px',
+
+        queryParams:{searchValue:''}
     }
 
     // EditorRef = React.createRef();
 
     componentDidMount(){
+        this.LoadData()
+    }
+
+    LoadData = ()=>{
         getAction('/open/scripts/files',{
-            searchValue:''
+            ...this.state.queryParams
         }).then(res =>{
             console.log(res.data.data);
             this.setState({
-                records: res.data.data
+                records: res.data.data.filter( item=> item.title.indexOf(this.state.queryParams.searchValue)>-1 )
             })
         })
     }
@@ -133,6 +139,7 @@ export default class Fuck extends React.Component{
 
   
                 <FloatingPanel anchors={anchors}>
+                <Search placeholder='请输入内容' showCancelButton onSearch={v=>this.setState({queryParams:{searchValue:v}},this.LoadData)} />
                     <List>
                     { this.state.records.map((v,index) => (
                             <List.Item key={index} onClick={()=>this.handleCardClick(v.title)}>
