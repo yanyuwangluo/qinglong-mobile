@@ -35,7 +35,8 @@ export default class Fuck extends React.Component{
         }).then(res =>{
             console.log(res.data.data);
             // 显示日志内容
-            Dialog.confirm({
+            Dialog.show({
+                closeOnMaskClick: true,
                 title:v.name,
                 content:  (
                     <TextArea
