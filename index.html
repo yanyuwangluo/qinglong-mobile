@@ -2,8 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" /> -->
-    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"  name="viewport" />
+    <meta id="viewportMeta" name="viewport" />
+    <script>
+      // 防止安卓手机端的键盘， focus时改变了页面高度。
+      var initViewport = function(height){
+      var metaEl = document.querySelector("#viewportMeta");
+      var content = "height=" + height + ",width=device-width,initial-scale=1.0,user-scalable=no";
+      metaEl.setAttribute('name', 'viewport');
+      metaEl.setAttribute('content', content);
+      }
+      var realHeight = window.innerWidth > window.innerHeight ? window.innerWidth : window.innerHeight
+      initViewport(realHeight);
+    </script>
     <title>Vite App</title>
   </head>
   <body>

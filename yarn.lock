@@ -585,6 +585,11 @@
   resolved "https://registry.nlark.com/@types/js-cookie/download/@types/js-cookie-2.2.7.tgz?cache=0&sync_timestamp=1629708510838&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fjs-cookie%2Fdownload%2F%40types%2Fjs-cookie-2.2.7.tgz#226a9e31680835a6188e887f3988e60c04d3f6a3"
   integrity sha1-ImqeMWgINaYYjoh/OYjmDATT9qM=
 
+"@types/node@^16.9.1":
+  version "16.9.1"
+  resolved "https://registry.nlark.com/@types/node/download/@types/node-16.9.1.tgz?cache=0&sync_timestamp=1631217813487&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-16.9.1.tgz#0611b37db4246c937feef529ddcc018cf8e35708"
+  integrity sha1-BhGzfbQkbJN/7vUp3cwBjPjjVwg=
+
 "@types/prop-types@*":
   version "15.7.4"
   resolved "https://registry.nlark.com/@types/prop-types/download/@types/prop-types-15.7.4.tgz?cache=0&sync_timestamp=1629708829833&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fprop-types%2Fdownload%2F%40types%2Fprop-types-15.7.4.tgz#fcf7205c25dff795ee79af1e30da2c9790808f11"

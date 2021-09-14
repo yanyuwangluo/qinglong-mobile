@@ -5,7 +5,8 @@
     "dev": "vite --host",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "push": "start .\\push.bat"
+    "push": "start .\\push.bat",
+    "viewbuild": "explorer dist"
   },
   "dependencies": {
     "@codemirror/lang-javascript": "^0.19.1",
@@ -19,6 +20,7 @@
     "vite-plugin-imp": "^2.0.7"
   },
   "devDependencies": {
+    "@types/node": "^16.9.1",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@vitejs/plugin-react-refresh": "^1.3.1",
