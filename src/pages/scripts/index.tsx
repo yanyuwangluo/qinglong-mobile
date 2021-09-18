@@ -1,7 +1,9 @@
 import React,{useEffect, useState} from 'react'
-import { Result,Badge, Card, Dialog, TextArea, Button, Search } from 'antd-mobile'
-import {getAction, putAction} from '../../utils/requests'
+import { Result,Badge, Card, Dialog, TextArea, Button, Search, Form, Input } from 'antd-mobile'
+import {getAction, putAction,postAction} from '../../utils/requests'
+import {Toast,Alert} from '../../utils/utils'
 import style from './index.module.less'
+import cronParse from 'cron-parser';
 export default class Fuck extends React.Component{
     state = {
         records:[],
@@ -56,6 +58,61 @@ export default class Fuck extends React.Component{
         })
     }
 
+    // 添加任务
+    addSchedule = () => {
+        Dialog.show({
+          closeOnAction: true,
+          closeOnMaskClick : true,
+          content: (
+            <Form style={{width:'96%',height:'90%'}}
+            onFinish={this.onFormFinish}
+            footer={
+              <Button block type='submit' color='primary'>
+                添加
+              </Button>
+            }
+          >
+              <Form.Item
+                name='name'
+                label='名称'
+                rules={[{ required: true, message: '名称不能为空' }]}
+              >
+                <Input placeholder='请输入名称' />
+              </Form.Item>
+      
+              <Form.Item name='command' label='命令'
+              rules={[{ required: true, message: '命令不能为空' }]}>
+                    <Input placeholder='请输入命令' />
+              </Form.Item>
+      
+              <Form.Item name='schedule' label='定时规则'
+               rules={[{ required: true, message: '规则不能为空',             
+                            validator: (rule, value,callback) => {
+                                if (cronParse.parseExpression(value).hasNext()) {
+                                // return Promise.resolve();
+                                    callback()
+                                } else {
+                                // return Promise.reject('Cron表达式格式有误');
+                                    callback('crob表达式有误')
+                                }
+                            }, }]}
+               >
+                    <Input placeholder='秒(可选) 分 时 天 月 周' />
+              </Form.Item>
+            </Form>
+          ),
+        })
+      }
+
+    // 完成表单
+    onFormFinish = (values: any) => {
+        postAction('/open/crons',values).then(res=>{
+            if(res.data.code == 200){
+                Alert('添加成功')
+            }
+        })
+    }
+
 
 
 
@@ -86,9 +143,10 @@ export default class Fuck extends React.Component{
         }
 
        return (<div style={{margin:'0px auto',width:'90%'}}>
-
-                <Search style={{'--background':'#ffffff'}} placeholder='请输入内容' showCancelButton onSearch={v=>this.setState({queryParams:{searchValue:v}},this.LoadData)} />
-
+            <div style={{display:'flex'}}>
+                <Button color="primary" size="mini" onClick={this.addSchedule}>添加任务</Button>
+                <Search style={{'--background':'#ffffff',flexGrow:1}} placeholder='请输入内容' showCancelButton onSearch={v=>this.setState({queryParams:{searchValue:v}},this.LoadData)} />
+            </div>
             { this.state.records.map((v,index) => (
                 <div key={index} className={style.card}>
                         <Card onClick={()=>this.handleCardClick({id:v._id,name:v.name})} title={v.name} extra={<div style={{marginLeft:10}}> {status(v.isDisabled)}</div>}>

@@ -804,6 +804,13 @@ crelt@^1.0.5:
   resolved "https://registry.npm.taobao.org/crelt/download/crelt-1.0.5.tgz#57c0d52af8c859e354bace1883eb2e1eb182bb94"
   integrity sha1-V8DVKvjIWeNUus4Yg+suHrGCu5Q=
 
+cron-parser@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.nlark.com/cron-parser/download/cron-parser-4.0.0.tgz#2198c42c0a8a57ccbe55d3c377867b1fec336a13"
+  integrity sha1-IZjELAqKV8y+VdPDd4Z7H+wzahM=
+  dependencies:
+    luxon "^1.26.0"
+
 csstype@^3.0.2:
   version "3.0.8"
   resolved "https://registry.nlark.com/csstype/download/csstype-3.0.8.tgz#d2266a792729fb227cd216fb572f43728e1ad340"
@@ -1036,6 +1043,11 @@ lower-case@^2.0.2:
   integrity sha1-b6I3xj29xKgsoP2ILkci3F5jTig=
   dependencies:
     tslib "^2.0.3"
+
+luxon@^1.26.0:
+  version "1.28.0"
+  resolved "https://registry.nlark.com/luxon/download/luxon-1.28.0.tgz#e7f96daad3938c06a62de0fb027115d251251fbf"
+  integrity sha1-5/ltqtOTjAamLeD7AnEV0lElH78=
 
 make-dir@^2.1.0:
   version "2.1.0"
