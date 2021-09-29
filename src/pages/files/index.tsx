@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import { Result,Badge, Card, Dialog, TextArea, Divider, List, FloatingPanel, Button, Search } from 'antd-mobile'
 import {getAction,putAction} from '../../utils/requests'
-import {Toast,Alert} from '../../utils/utils'
+import {Alert} from '../../utils/utils'
 import style from './index.module.less'
 // code editor
 import CodeMirror from '@uiw/react-codemirror';
@@ -9,6 +9,14 @@ import { javascript } from '@codemirror/lang-javascript';
 
 
 const anchors = [100, window.innerHeight * 0.4, window.innerHeight * 0.8]
+type FloatingPanelRef = {
+    setHeight: (
+      height: number,
+      options?: {
+        immediate?: boolean // 是否跳过动画
+      }
+    ) => void
+  }
 export default class Fuck extends React.Component{
     state = {
         records:[],
@@ -20,8 +28,6 @@ export default class Fuck extends React.Component{
 
         queryParams:{searchValue:''}
     }
-
-    // EditorRef = React.createRef();
 
     componentDidMount(){
         this.LoadData()

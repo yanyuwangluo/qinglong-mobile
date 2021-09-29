@@ -17,14 +17,15 @@ export default class Fuck extends React.Component{
     componentDidMount(){
         this.LoadData()
     }
-
+    
+    /* 列出数据 */
     LoadData = ()=>{
         getAction('/open/crons',{
             ...this.state.queryParams
         }).then(res =>{
             console.log(res.data.data);
             this.setState({
-                records: res.data.data
+                records: res.data.data.sort((x,y)=>x.status-y.status + x.isDisabled-y.isDisabled)
             })
         })
     }
@@ -55,6 +56,9 @@ export default class Fuck extends React.Component{
     runTask = (id)=>{
         putAction('/open/crons/run',[id]).then(res=>{
             console.log(res.data);
+            if(res.data.code == 200){
+                this.LoadData()
+            }
         })
     }
 
@@ -142,8 +146,8 @@ export default class Fuck extends React.Component{
             return status[text]
         }
 
-       return (<div style={{margin:'0px auto',width:'90%'}}>
-            <div style={{display:'flex'}}>
+       return (<div style={{margin:'0px auto',width:'90%',marginBottom:'5vh'}}>
+            <div style={{display:'flex',margin:'10px 0'}}>
                 <Button color="primary" size="mini" onClick={this.addSchedule}>添加任务</Button>
                 <Search style={{'--background':'#ffffff',flexGrow:1}} placeholder='请输入内容' showCancelButton onSearch={v=>this.setState({queryParams:{searchValue:v}},this.LoadData)} />
             </div>
@@ -153,7 +157,7 @@ export default class Fuck extends React.Component{
                                 <p>{v.schedule}</p>
                                 <p>{v.status==0?'运行中':'空闲'}</p>
                         </Card>
-                        <Button  color="primary" disabled={v.status==0} 
+                        <Button className={style.runbtn}  color="primary" disabled={v.status==0} 
                             onClick={ ()=>
                                 {
                                 Dialog.show({

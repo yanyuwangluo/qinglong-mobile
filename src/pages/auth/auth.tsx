@@ -16,9 +16,6 @@ import {setLocationStorage } from '../../utils/function'
 export default ()=>{
   const onFinish = (values: any) => {
     const {backend, id, secret} = values
-    // Dialog.alert({
-    //   content: JSON.stringify(values),
-    // })
     axios(
       {url:`http://${backend}/open/auth/token?client_id=${id}&client_secret=${secret}`
     })

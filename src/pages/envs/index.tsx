@@ -2,6 +2,7 @@ import React,{useEffect, useState} from 'react'
 import { Collapse, Result } from 'antd-mobile'
 import {getAction} from '../../utils/requests'
 import style from './index.module.less'
+import { wrap } from 'module'
 
 export default class Fuck extends React.Component{
     state = {
@@ -25,16 +26,11 @@ export default class Fuck extends React.Component{
         <Collapse>
         { this.state.records.map((v,index) => (
                 <Collapse.Panel key={index.toString()} title={v.name + ' : '+ v.remarks}>
-                    <p>{v.value}</p>
+                    <textarea style={{overflow:'wrap',width:'100%'}}>{v.value}</textarea>
                 </Collapse.Panel>
-                // <div key={index} className={style.card}>
-                //    <h3> {v.name} </h3>
-                //    <p>{v.remarks}</p>
-                //   </div>
             ))}
 
         </Collapse>
-
         </div>)
     }
 }

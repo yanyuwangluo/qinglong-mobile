@@ -27,7 +27,7 @@ axios.interceptors.response.use(response=> { // axios响应拦截器
 });
 
 /*
- 通用化配置
+ axios通用化配置参数
 */
  const default_timeout = 30000 // 超时30秒
 const host = getLocationStorage('host') //host
