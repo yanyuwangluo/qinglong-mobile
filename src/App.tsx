@@ -8,7 +8,7 @@ import {
   UnorderedListOutlined,
   UserOutlined,} from '@ant-design/icons'
 
-import Mine from './pages/mine/mine' 
+import Other from './pages/index/index' 
 import {getLocationStorage} from './utils/function'
 import {Toast} from './utils/utils'
 
@@ -22,6 +22,12 @@ function App() {
       title: '我的脚本',
       icon: <UnorderedListOutlined />,
       badge: '5',
+    },
+    {
+      key: 'configs',
+      title: '我的配置',
+      icon: <UserOutlined />,
+      badge: '99+',
     },
     {
       key: 'envs',
@@ -54,6 +60,7 @@ function App() {
     const Bar = React.lazy(() => import('./pages/scripts/index'));
     const Zar = React.lazy(() => import('./pages/envs/index'));
     const Har = React.lazy(() => import('./pages/files/index'));
+    const Iar = React.lazy(() => import('./pages/configs/index'));
 
     if(!getLocationStorage('token')){
       // Toast.show('没登录就乖乖登录')
@@ -90,9 +97,15 @@ function App() {
           </React.Suspense>
       );break;
 
+      case 'configs': return (
+        <React.Suspense fallback={<div>loading...</div>}>
+              <Iar/>
+          </React.Suspense>
+      );break;
+
       // case 'todo': return <Home value={index}></Home>; break;
       // case 'mine': return <Result></Result>; break;
-      default : return <Mine value={'其他'}></Mine>; break;
+      default : return <Other value={'其他'}></Other>; break;
     }
   }
 

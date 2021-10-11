@@ -148,7 +148,7 @@ export default class Fuck extends React.Component{
 
        return (<div style={{margin:'0px auto',width:'90%',marginBottom:'5vh'}}>
             <div style={{display:'flex',margin:'10px 0'}}>
-                <Button color="primary" size="mini" onClick={this.addSchedule}>添加任务</Button>
+                <Button color="primary" size="mini" onClick={this.addSchedule} style={{width:"15vh"}}>添加任务</Button>
                 <Search style={{'--background':'#ffffff',flexGrow:1}} placeholder='请输入内容' showCancelButton onSearch={v=>this.setState({queryParams:{searchValue:v}},this.LoadData)} />
             </div>
             { this.state.records.map((v,index) => (
