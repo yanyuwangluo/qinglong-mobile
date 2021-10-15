@@ -9,9 +9,10 @@
 ![image](https://user-images.githubusercontent.com/18437170/132957393-3505f744-0fd9-447e-9b74-0ec538be1ae8.png)
 ![image](https://user-images.githubusercontent.com/18437170/132981332-62e55258-49f5-4bdf-99d9-d7125752d5fe.png) -->
 
+<div style="display:flex">
 <img src="https://user-images.githubusercontent.com/18437170/132957393-3505f744-0fd9-447e-9b74-0ec538be1ae8.png" width="30%" />
 <img src="https://user-images.githubusercontent.com/18437170/132981332-62e55258-49f5-4bdf-99d9-d7125752d5fe.png" width="30%" />
-
+</div>
 
 # 预览（chrome不行，https域名不让请求http接口 ， 用手机自带浏览器）
 - https://qinglong.vercel.app/
