@@ -17,7 +17,7 @@ export default ()=>{
   const onFinish = (values: any) => {
     const {backend, id, secret} = values
     axios(
-      {url:`https://${backend}/open/auth/token?client_id=${id}&client_secret=${secret}`
+      {url:`http://${backend}/open/auth/token?client_id=${id}&client_secret=${secret}`
     })
     .then(res=>{
       if(res.data.data.token){
